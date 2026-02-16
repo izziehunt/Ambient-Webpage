@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ambient 5</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: #050508;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: rgba(138, 43, 226, 0.6);
+            border-right-color: rgba(0, 191, 255, 0.4);
+            width: 200px;
+            height: 200px;
+            animation: ring-spin 8s linear infinite;
+        }
+        .ring:nth-child(2) { width: 280px; height: 280px; animation-duration: 12s; animation-direction: reverse; border-top-color: rgba(255, 105, 180, 0.5); border-left-color: rgba(255, 215, 0, 0.3); }
+        .ring:nth-child(3) { width: 360px; height: 360px; animation-duration: 16s; animation-delay: 1s; border-bottom-color: rgba(0, 255, 127, 0.4); border-right-color: rgba(255, 69, 0, 0.3); }
+        .glow-box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(100, 100, 255, 0.2), rgba(200, 100, 255, 0.1));
+            box-shadow:
+                0 0 40px rgba(138, 43, 226, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+            transform-style: preserve-3d;
+            animation: glow-tilt 10s ease-in-out infinite;
+        }
+        .glow-box:nth-child(4) { width: 60px; height: 60px; border-radius: 16px; animation-delay: -3s; margin-top: -250px; box-shadow: 0 0 50px rgba(255, 182, 193, 0.4); }
+        .glow-box:nth-child(5) { width: 80px; height: 80px; border-radius: 24px; animation-delay: -6s; margin-top: 200px; margin-left: 180px; box-shadow: 0 0 45px rgba(135, 206, 250, 0.35); }
+        @keyframes ring-spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes glow-tilt {
+            0%, 100% { transform: rotateY(0deg) rotateX(10deg); }
+            50% { transform: rotateY(180deg) rotateX(-10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="glow-box"></div>
+    <div class="glow-box"></div>
+</body>
+</html>

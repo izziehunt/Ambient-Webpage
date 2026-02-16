@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ambient 3</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .scene {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape.circle {
+            width: 20vmin;
+            height: 20vmin;
+            background: radial-gradient(circle at 30% 30%, rgba(255,107,107,0.8), rgba(255,142,83,0.4));
+            top: 20%;
+            left: 20%;
+            animation: drift1 18s ease-in-out infinite;
+        }
+        .shape.circle:nth-child(2) {
+            width: 15vmin;
+            height: 15vmin;
+            background: radial-gradient(circle at 60% 40%, rgba(78,205,196,0.7), rgba(45,106,106,0.3));
+            top: 60%;
+            left: 70%;
+            animation: drift2 14s ease-in-out infinite 3s;
+        }
+        .shape.circle:nth-child(3) {
+            width: 25vmin;
+            height: 25vmin;
+            background: radial-gradient(circle at 40% 60%, rgba(255,230,109,0.5), rgba(247,183,49,0.2));
+            top: 40%;
+            left: 40%;
+            animation: drift3 22s ease-in-out infinite 6s;
+        }
+        .shape.pill {
+            width: 12vmin;
+            height: 30vmin;
+            border-radius: 50%;
+            background: linear-gradient(180deg, rgba(155,89,182,0.6), rgba(142,68,173,0.2));
+            top: 30%;
+            right: 25%;
+            animation: drift2 16s ease-in-out infinite 2s reverse;
+        }
+        .shape.pill:nth-child(5) {
+            width: 25vmin;
+            height: 10vmin;
+            top: 70%;
+            left: 15%;
+            background: linear-gradient(90deg, rgba(52,152,219,0.5), rgba(41,128,185,0.2));
+            animation: drift1 20s ease-in-out infinite 4s;
+        }
+        @keyframes drift1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(5vw, -8vh) rotate(120deg); }
+            66% { transform: translate(-6vw, 4vh) rotate(240deg); }
+        }
+        @keyframes drift2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-4vw, 6vh) scale(1.15); }
+        }
+        @keyframes drift3 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(8vw, 5vh); }
+            50% { transform: translate(-3vw, -7vh); }
+            75% { transform: translate(4vw, -2vh); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="shape circle"></div>
+        <div class="shape circle"></div>
+        <div class="shape circle"></div>
+        <div class="shape pill"></div>
+        <div class="shape pill"></div>
+    </div>
+</body>
+</html>

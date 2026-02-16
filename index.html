@@ -1,57 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Title</title>
-        <style>
-            
-            .box {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            /* Add a smooth transition effect */
-            transition: transform 0.5s ease-in-out; 
-            display: flex; /* Centers text for better visual */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ambient — Watch</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: #0a0a0f;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
-            padding-left: 30px;
-            margin-left: 30px;
-          }
-          
-          .box:hover {
-            /* Rotate the element 180 degrees clockwise on hover */
-            transform: rotate(180deg);
-          }
-          div {
-            width: 100px;
-            height: 100px;
-            background-color: rgba(255, 221, 0, 0.543);
-            animation-name: myAnimation;
-            animation-iteration-count:infinite;
+            gap: 2rem;
+            padding: 2rem;
+            font-family: system-ui, sans-serif;
         }
-
-        @keyframes myAnimation {
-        from {background-color: rgb(254, 235, 255);}
-        to {background-color: rgb(198, 238, 255);}
+        a {
+            color: #888;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: color 0.3s, background 0.3s;
         }
-        .dot {
-              height: 100px;
-              width: 100px;
-              background-color: #96b1ef;
-              border-radius: 50%;
-              display: inline-block;
-              filter: blur(4px);
-            }
-            </style>
-    </head>
-    <body>
-        <div style="text-align:center">
-            <span class="dot"></span>
-            <span class="box"></span>
-        </div>
-
-    </body>
+        a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.06);
+        }
+        nav { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="ambient-1.html">Ambient 1</a>
+        <a href="ambient-2.html">Ambient 2</a>
+        <a href="ambient-3.html">Ambient 3</a>
+        <a href="ambient-4.html">Ambient 4</a>
+        <a href="ambient-5.html">Ambient 5</a>
+    </nav>
+</body>
 </html>

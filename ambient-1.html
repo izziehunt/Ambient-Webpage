@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ambient 1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .stage {
+            width: 80vmin;
+            height: 80vmin;
+            position: relative;
+            filter: blur(0.5px);
+        }
+        .orb {
+            position: absolute;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            top: 30%;
+            left: 30%;
+            background: radial-gradient(circle at 30% 30%, #ff6b9d, #c44569 40%, transparent 70%);
+            animation: orb-float 12s ease-in-out infinite;
+        }
+        .orb:nth-child(2) {
+            width: 35%;
+            height: 35%;
+            top: 50%;
+            left: 20%;
+            background: radial-gradient(circle at 60% 40%, #4ecdc4, #2d6a6a 50%, transparent 70%);
+            animation: orb-float 10s ease-in-out infinite 2s reverse;
+        }
+        .orb:nth-child(3) {
+            width: 25%;
+            height: 25%;
+            top: 25%;
+            left: 55%;
+            background: radial-gradient(circle at 40% 60%, #ffe66d, #f7b731 50%, transparent 70%);
+            animation: orb-float 14s ease-in-out infinite 4s;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(8%, -8%) scale(1.05); }
+            50% { transform: translate(-5%, 5%) scale(0.95); }
+            75% { transform: translate(-8%, -5%) scale(1.02); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+</body>
+</html>

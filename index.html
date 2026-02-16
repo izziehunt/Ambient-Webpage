@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Title</title>
+        <style>
+            
+            .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Add a smooth transition effect */
+            transition: transform 0.5s ease-in-out; 
+            display: flex; /* Centers text for better visual */
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-left: 30px;
+            margin-left: 30px;
+          }
+          
+          .box:hover {
+            /* Rotate the element 180 degrees clockwise on hover */
+            transform: rotate(180deg);
+          }
+          div {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 221, 0, 0.543);
+            animation-name: myAnimation;
+            animation-iteration-count:infinite;
+        }
+
+        @keyframes myAnimation {
+        from {background-color: rgb(254, 235, 255);}
+        to {background-color: rgb(198, 238, 255);}
+        }
+        .dot {
+              height: 100px;
+              width: 100px;
+              background-color: #96b1ef;
+              border-radius: 50%;
+              display: inline-block;
+              filter: blur(4px);
+            }
+            </style>
+    </head>
+    <body>
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="box"></span>
+        </div>
+
+    </body>
+</html>
